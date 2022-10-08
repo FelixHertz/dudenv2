@@ -23,7 +23,7 @@ def add_data(wort, gebrauch):
 		mycursor.execute(sql, val)
 		mydb.commit()
 	except:
-		continue
+                print("Error")
 	
 
 def add_data_other(wort, gebrauch):
@@ -33,8 +33,7 @@ def add_data_other(wort, gebrauch):
 		mycursor.execute(sql, val)
 		mydb.commit()
 	except:
-		continue
-	
+                print("Error")
 
 
 
@@ -72,7 +71,7 @@ def scrape():
 					add_data_other(entry, result)
 
 		except:
-			continue
+                        print("Error")
 		
 	
 scrape()
