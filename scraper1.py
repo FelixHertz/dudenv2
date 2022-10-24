@@ -38,6 +38,7 @@ def add_data_other(wort, gebrauch):
 
 # Chrome Options
 chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = '.apt/usr/bin/google-chrome-stable'
 chrome_options.add_argument ("--headless")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--no-sandbox")
@@ -45,7 +46,8 @@ chrome_options.add_argument("--no-sandbox")
 
 
 # Starting Web Driver
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=chrome_options)
+##driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=chrome_options)
+driver = webdriver.Chrome(executable_path="/app/.chromedriver/bin/chromedriver", options=chrome_options)
 driver.get("http://www.google.com/")
 
 
