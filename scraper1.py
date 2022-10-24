@@ -12,10 +12,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import os
 import mysql.connector
-from selenium.webdriver.firefox.service import Service as FirefoxService
-from webdriver_manager.firefox import GeckoDriverManager
-from webdriver_manager.core.utils import ChromeType
-
 
 mydb = mysql.connector.connect(host="h1.host.filess.io", user="dudenv2_bystreamwe", passwd="239848e4ad651c7b21981c6cd1fea4bf6ec5c444", database="dudenv2_bystreamwe", port="3307")
 mycursor = mydb.cursor()
@@ -41,10 +37,11 @@ def add_data_other(wort, gebrauch):
 
 
 # Chrome Options
-options = webdriver.FirefoxOptions()
-options.set_preference("dom.webnotifications.serviceworker.enabled", False)
-options.set_preference("dom.webnotifications.enabled", False)
-options.add_argument('--headless')
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = '.apt/usr/bin/google-chrome-stable'
+chrome_options.add_argument ("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
 
 
 
