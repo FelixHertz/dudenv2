@@ -13,7 +13,7 @@ from selenium.webdriver.common.keys import Keys
 import os
 import mysql.connector
 
-mydb = mysql.connector.connect(host="sql11.freesqldatabase.com", user="sql11524700", passwd="tY17NVeXtN", database="sql11524700")
+mydb = mysql.connector.connect(host="h1.host.filess.io", user="dudenv2_bystreamwe", passwd="239848e4ad651c7b21981c6cd1fea4bf6ec5c444", database="dudenv2_bystreamwe", port="3307")
 mycursor = mydb.cursor()
 
 def add_data(wort, gebrauch):
@@ -24,7 +24,6 @@ def add_data(wort, gebrauch):
 		mydb.commit()
 	except:
                 print("Error")
-	
 
 def add_data_other(wort, gebrauch):
 	try:
@@ -73,7 +72,7 @@ def scrape():
 					add_data_other(entry, result)
 
 		except:
-                        print("Error")
+                        print(f"{entry} Not Found")
 		
 	
 scrape()
