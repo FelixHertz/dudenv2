@@ -4,7 +4,7 @@ from datetime import datetime
 import base64
 import os.path
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromiumService
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
@@ -12,7 +12,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import os
 import mysql.connector
-from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.core.utils import ChromeType
 
@@ -50,7 +50,7 @@ options.add_argument('--headless')
 
 # Starting Web Driver
 ##driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=chrome_options)
-driver = webdriver.Chrome(service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()))
+driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()),options=options)
 driver.get("http://www.google.com/")
 
 
