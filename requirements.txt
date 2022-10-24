@@ -68,3 +68,7 @@ webdriver-manager==3.8.3
 Werkzeug==2.2.2
 wsproto==1.0.0
 zipp==3.8.1
+libglib2.0-0=2.50.3-2
+libnss3=2:3.26.2-1.1
+libgconf-2-4=3.2.6-4
+libfontconfig1=2.11.0-6.7
